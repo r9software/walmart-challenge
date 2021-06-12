@@ -15,6 +15,8 @@ class MovieListViewModel(private val movieDao: MovieDao, private val genresDao: 
 
     var movies = mutableListOf<Movie>()
     val moviesList: MutableLiveData<List<Movie>> = MutableLiveData()
+    var genres = mutableListOf<Genre>()
+    val genresList: MutableLiveData<List<Genre>> = MutableLiveData()
     var page: Int = 0
     var count: Int = 0
     fun getGenres() {
@@ -50,11 +52,15 @@ class MovieListViewModel(private val movieDao: MovieDao, private val genresDao: 
     @SuppressLint("CheckResult")
     private fun onGetGenresSuccess(result: GenresResponse<Genre>) {
         if (result.getResults() != null) {
+
+            genres.addAll(result.getResults()!!)
             Observable.just(genresDao)
                 .subscribeOn(Schedulers.io())
                 .subscribe({ it.insertAll(result.getResults()!!) }, { throwable ->
                     onFailure(throwable)
                 })
+            genresList.value = genres
+            genres.clear()
             isLoading.set(false)
         }
         getMovies(1)

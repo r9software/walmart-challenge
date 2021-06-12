@@ -1,12 +1,15 @@
 package com.midevs.walmartchallenge.models
 
 import android.net.UrlQuerySanitizer
+import androidx.room.TypeConverters
+import com.midevs.walmartchallenge.utils.Converters
 import com.squareup.moshi.Json
 
 
 public class GenresResponse<Genre> {
 
-    @Json(name = "genres")
+    @TypeConverters(Converters::class)
+    @field:Json(name = "genres")
     private var results: List<Genre>? = null
 
 

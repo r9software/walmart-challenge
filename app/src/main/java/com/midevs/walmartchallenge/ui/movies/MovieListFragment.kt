@@ -30,6 +30,7 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewMo
             mAdapter.notifyDataSetChanged()
         })
         viewModel.genresList.observe(viewLifecycleOwner, Observer { genres ->
+            genresList.clear()
             genresList.addAll(genres)
         })
         recyclerView.addOnScrollListener(object :

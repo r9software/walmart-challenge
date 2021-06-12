@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_base"
+    app:startDestination="@id/movie_list">
+
+    <fragment
+        android:id="@+id/movie_list"
+        android:name="com.midevs.walmartchallenge.ui.MovieListFragment"
+        tools:layout="@layout/fragment_movie_list"
+        android:label="Movies">
+
+        <action
+            android:id="@+id/action_movie_list_to_movieFragment"
+            app:destination="@id/movieFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        tools:layout="@layout/fragment_movie"
+        android:name="com.midevs.walmartchallenge.ui.MovieFragment"
+        android:label="AthleteFragment">
+        <argument
+            android:name="athlete_id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_movie_to_movieList"
+            app:destination="@id/movie_list"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+</navigation>

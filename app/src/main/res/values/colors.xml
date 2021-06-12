@@ -6,5 +6,26 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#1064E9</color>
+    <color name="colorPrimaryDark">#0C50BA</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="secondary_blue">#6C9CE8</color>
+    <color name="actionButton">#E2E2E2</color>
+    <color name="cursorColor">#1064E9</color>
+    <color name="tertiary_blue">#236FE7</color>
+    <color name="app_purple">#2D2A80</color>
+    <color name="facebook_color">#496FAA</color>
+    <color name="facebook_color_bold">#365086</color>
+    <color name="google_color">#C4C4C4</color>
+    <color name="secondary_gray">#5F5F5F</color>
+    <color name="selected_button_color">#6FA6FF</color>
+    <color name="day_of_week_color">#4C4C4C</color>
+    <color name="text_greyish_color">#8FBAFE</color>
+    <color name="athlete_button_color">#318FF7</color>
+    <color name="green">#35BF00</color>
+    <color name="light_green">#57DB7D</color>
+    <color name="dark_grey">#262626</color>
+    <color name="white">#FFFFFF</color>
+    <color name="badge_color">#FE3C2F</color>
+
 </resources>

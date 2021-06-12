@@ -10,10 +10,11 @@
 
 ## Considerations 
 
--The code uses MVVM to connect the data layer with the views, also a network layer with retrofit and a local storage with room, while the database is not yet connected
-it can be connected in the future, proving the concept of stage integrations.
--The architecture uses Databinding and a set of BASE elements that can be replicated easily for multiple features
--All the libraries and tools are used because they simplify a lot of manual work that is required for client / server applications
+- The code uses MVVM to connect the data layer with the views, also a network layer with retrofit and a local storage with room, while the database is not yet connected it can be connected in the future, proving the concept of stage integrations.
+
+- The architecture uses Databinding and a set of BASE elements that can be replicated easily for multiple features
+
+- All the libraries and tools are used because they simplify a lot of manual work that is required for client / server applications
 
 ## Libraries
 

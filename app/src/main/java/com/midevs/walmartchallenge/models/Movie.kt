@@ -3,7 +3,7 @@ package com.midevs.walmartchallenge.models
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "Movie_table")
+@Entity(tableName = "movie_table")
 data class Movie(
     @PrimaryKey val id: Int, val title: String,
     val poster_path: String, val overview: String,

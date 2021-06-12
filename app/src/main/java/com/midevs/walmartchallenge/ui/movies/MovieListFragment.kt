@@ -1,4 +1,4 @@
-package com.midevs.walmartchallenge.ui
+package com.midevs.walmartchallenge.ui.movies
 
 import android.os.Bundle
 import android.view.View
@@ -11,6 +11,7 @@ import com.midevs.walmartchallenge.base.BaseFragment
 import com.midevs.walmartchallenge.databinding.FragmentMovieListBinding
 import com.midevs.walmartchallenge.di.ViewModelFactory
 import com.midevs.walmartchallenge.models.Movie
+import com.midevs.walmartchallenge.ui.PaginationListener
 
 class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewModel>() {
 
@@ -52,7 +53,7 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewMo
 
     override fun onResume() {
         super.onResume()
-        viewModel.getMovies(1)
+        viewModel.getGenres()
     }
 
     override val layoutId: Int get() = R.layout.fragment_movie_list

@@ -1,4 +1,4 @@
-package com.midevs.walmartchallenge.ui
+package com.midevs.walmartchallenge.ui.movies
 
 import android.view.Gravity
 import android.widget.FrameLayout

@@ -6,6 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.midevs.walmartchallenge.models.Genre
+import com.midevs.walmartchallenge.models.GenresDao
 import com.midevs.walmartchallenge.models.Movie
 import com.midevs.walmartchallenge.models.MovieDao
 import com.midevs.walmartchallenge.utils.Converters
@@ -13,13 +15,14 @@ import java.util.concurrent.Executors
 
 
 @Database(
-    entities = arrayOf(Movie::class),
-    version = 1,
+    entities = arrayOf(Movie::class, Genre::class),
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
 abstract class BaseDatabase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
+    abstract fun genreDao(): GenresDao
 
     companion object {
         var INSTANCE: BaseDatabase? = null

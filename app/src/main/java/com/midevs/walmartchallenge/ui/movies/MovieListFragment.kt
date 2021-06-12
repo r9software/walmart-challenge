@@ -10,22 +10,27 @@ import com.midevs.walmartchallenge.R
 import com.midevs.walmartchallenge.base.BaseFragment
 import com.midevs.walmartchallenge.databinding.FragmentMovieListBinding
 import com.midevs.walmartchallenge.di.ViewModelFactory
+import com.midevs.walmartchallenge.models.Genre
 import com.midevs.walmartchallenge.models.Movie
 import com.midevs.walmartchallenge.ui.PaginationListener
 
 class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewModel>() {
 
     private var moviesList: MutableList<Movie> = mutableListOf()
+    private var genresList: MutableList<Genre> = mutableListOf()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val mAdapter = MovieListAdapter(moviesList)
+        val mAdapter = MovieListAdapter(moviesList, genresList)
         val recyclerView = getViewDataBinding().movieRecyclerview
         getViewDataBinding().movieRecyclerview.adapter = mAdapter
         getViewDataBinding().viewModel = viewModel
         viewModel.moviesList.observe(viewLifecycleOwner, Observer { movies ->
             moviesList.addAll(movies)
             mAdapter.notifyDataSetChanged()
+        })
+        viewModel.genresList.observe(viewLifecycleOwner, Observer { genres ->
+            genresList.addAll(genres)
         })
         recyclerView.addOnScrollListener(object :
             PaginationListener(recyclerView.layoutManager as LinearLayoutManager) {

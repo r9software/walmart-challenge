@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/movie_list"
-        android:name="com.midevs.walmartchallenge.ui.MovieListFragment"
+        android:name="com.midevs.walmartchallenge.ui.movies.MovieListFragment"
         tools:layout="@layout/fragment_movie_list"
         android:label="Movies">
 
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/movieFragment"
         tools:layout="@layout/fragment_movie"
-        android:name="com.midevs.walmartchallenge.ui.MovieFragment"
+        android:name="com.midevs.walmartchallenge.ui.movies.MovieFragment"
         android:label="AthleteFragment">
         <argument
             android:name="athlete_id"

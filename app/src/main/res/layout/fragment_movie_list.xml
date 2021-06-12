@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.midevs.walmartchallenge.ui.MovieListViewModel" />
+            type="com.midevs.walmartchallenge.ui.movies.MovieListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

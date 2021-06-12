@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.midevs.walmartchallenge.base.BaseDatabase
+import com.midevs.walmartchallenge.ui.movies.MovieDetailViewModel
 import com.midevs.walmartchallenge.ui.movies.MovieListViewModel
 
 
@@ -15,6 +16,12 @@ class ViewModelFactory(private val activity: FragmentActivity?) : ViewModelProvi
             return MovieListViewModel(
                 (BaseDatabase.getAppDataBase(activity!!.applicationContext)!!.movieDao()),
                 BaseDatabase.getAppDataBase(activity!!.applicationContext)!!.genreDao()
+            ) as T
+        }
+        if (modelClass.isAssignableFrom(MovieDetailViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return MovieDetailViewModel(
+                (BaseDatabase.getAppDataBase(activity!!.applicationContext)!!.movieDao())
             ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")

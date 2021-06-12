@@ -1,9 +1,6 @@
 package com.midevs.walmartchallenge.network
 
-import com.midevs.walmartchallenge.models.Genre
-import com.midevs.walmartchallenge.models.GenresResponse
-import com.midevs.walmartchallenge.models.Movie
-import com.midevs.walmartchallenge.models.PaginatedResponse
+import com.midevs.walmartchallenge.models.*
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import okhttp3.ResponseBody
@@ -21,5 +18,9 @@ interface BaseApi {
 
     @GET("/3/genre/movie/list")
     fun getGenres(@Query("api_key") apiKey: String): Observable<GenresResponse<Genre>>
+
+    @GET("/3/movie/{id}")
+    fun getMovie(@Path("id") id: Int, @Query("api_key") apiKey: String): Observable<Movie>
+
 
 }

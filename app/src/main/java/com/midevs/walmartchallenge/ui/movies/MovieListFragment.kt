@@ -59,7 +59,10 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewMo
 
     override fun onResume() {
         super.onResume()
-        viewModel.getGenres()
+        if (genresList.size > 0)
+            viewModel.getMovies()
+        else
+            viewModel.getGenres()
     }
 
     override val layoutId: Int get() = R.layout.fragment_movie_list

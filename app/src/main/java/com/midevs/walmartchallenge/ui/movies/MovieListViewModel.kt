@@ -28,8 +28,8 @@ class MovieListViewModel(private val movieDao: MovieDao, private val genresDao: 
                 { throwable -> onFailure(throwable) })
     }
 
-    fun getMovies(page: Int) {
-        this.page = page
+    fun getMovies() {
+        page += 1
         isLoading.set(true)
         subscription = baseApi.getMovies(API_KEY, page)
             .subscribeOn(Schedulers.io())
@@ -40,7 +40,7 @@ class MovieListViewModel(private val movieDao: MovieDao, private val genresDao: 
 
     fun nextPage() {
         if (count > (page + 1)) {
-            getMovies(page + 1)
+            getMovies()
         } else {
             // no more pages
             isLoading.set(false)
@@ -63,7 +63,7 @@ class MovieListViewModel(private val movieDao: MovieDao, private val genresDao: 
             genres.clear()
             isLoading.set(false)
         }
-        getMovies(1)
+        getMovies()
     }
 
     @SuppressLint("CheckResult")
